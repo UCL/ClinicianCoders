@@ -182,7 +182,7 @@ attached base packages:
 
 loaded via a namespace (and not attached):
 [1] compiler_4.3.1    tools_4.3.1       rstudioapi_0.15.0 yaml_2.3.7       
-[5] knitr_1.43        xfun_0.40         renv_1.0.3        evaluate_0.21    
+[5] knitr_1.44        xfun_0.40         renv_1.0.3        evaluate_0.22    
 ```
 
 Will print out your current version of R, as well as any packages you
