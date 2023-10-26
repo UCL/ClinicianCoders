@@ -58,7 +58,13 @@
     <loc>https://swcarpentry.github.io/r-novice-gapminder/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/r-novice-gapminder/aio.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/r-novice-gapminder/discuss.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/r-novice-gapminder/images.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/r-novice-gapminder/index.html</loc>
@@ -121,16 +127,34 @@
     <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/discuss.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/r-novice-gapminder/key-points.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/r-novice-gapminder/profiles.html</loc>
