@@ -1,141 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/01-rstudio-intro.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/02-project-intro.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/02-project-intro.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/03-seeking-help.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/03-seeking-help.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/04-data-structures-part1.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/04-data-structures-part1.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/05-data-structures-part2.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/05-data-structures-part2.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/06-data-subsetting.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/07-control-flow.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/07-control-flow.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/08-plot-ggplot2.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/09-vectorization.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/09-vectorization.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/10-functions.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/10-functions.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/11-writing-data.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/11-writing-data.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/12-plyr.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/12-plyr.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/13-dplyr.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/13-dplyr.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/14-tidyr.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/14-tidyr.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/15-knitr-markdown.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/16-wrap-up.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/16-wrap-up.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/404.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/404.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/CODE_OF_CONDUCT.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/LICENSE.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/discuss.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/aio.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/index.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/discuss.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/01-rstudio-intro.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/images.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/02-project-intro.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/index.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/03-seeking-help.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/01-rstudio-intro.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/04-data-structures-part1.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/02-project-intro.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/05-data-structures-part2.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/03-seeking-help.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/06-data-subsetting.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/04-data-structures-part1.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/07-control-flow.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/05-data-structures-part2.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/08-plot-ggplot2.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/06-data-subsetting.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/09-vectorization.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/07-control-flow.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/10-functions.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/08-plot-ggplot2.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/11-writing-data.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/09-vectorization.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/12-plyr.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/10-functions.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/13-dplyr.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/11-writing-data.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/14-tidyr.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/12-plyr.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/15-knitr-markdown.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/13-dplyr.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/16-wrap-up.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/14-tidyr.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/404.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/15-knitr-markdown.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/CODE_OF_CONDUCT.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/16-wrap-up.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/LICENSE.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/discuss.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/index.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/profiles.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/aio.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/instructor/reference.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/discuss.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/profiles.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/images.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/r-novice-gapminder/reference.html</loc>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://UCL.github.io/ClinicianCoders/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://UCL.github.io/ClinicianCoders/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://UCL.github.io/ClinicianCoders/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://UCL.github.io/ClinicianCoders/reference.html</loc>
   </url>
 </urlset>
