@@ -61,7 +61,7 @@ There is no limit in general to the mathematical operations we can carry out on 
 
 Discrete data take their value from a closed set of possible values. There is no bound as to what the elements of the set may be - they can be integer values, fractional values, or entirely non-numeric.
 
-Nominal data are data whose observation entails assigning thme to a category from a collection of labelled categories. An example might be eye-colour. The only mathematical procedure we can use with nominal data is *counting* so as to report *frequency* of occurrence and from these frequencies, proportions. Thus the measure of location or of central location for nominal data is **the mode** and the only measure of variability or dispersion is **the variation ratio**.
+Nominal data are data whose observation entails assigning them to a category from a collection of labelled categories. An example might be eye-colour. The only mathematical procedure we can use with nominal data is *counting* so as to report *frequency* of occurrence and from these frequencies, proportions. Thus the measure of location or of central location for nominal data is **the mode** and the only measure of variability or dispersion is **the variation ratio**.
 
 Ordinal data are discrete data items that can be ranked. So, as well as counting items they can be **ordered**. The mode can almost always be calculated for ordinal data, but it may also be possible to calculate the **median** as an alternative measure of central location. Variability in ordinal data is indicated by **range** and **interquartile range**.
 
@@ -173,10 +173,10 @@ What is the distribution of this data?
 
 ## Parametric vs non-parametric analysis
 
--   Parametric analsysis assumes that
+-   Parametric analysis assumes that
     -   The data follows a known distribution
     -   It can be described using *parameters*
-    -   Examples of distributions include, normal, poission, exponential.
+    -   Examples of distributions include, normal, Poisson, exponential.
 -   Non parametric data
     -   The data can't be said to follow a known distribution
 
@@ -191,7 +191,7 @@ How do you use numbers to convey what your data looks like.
 -   Parametric data
     -   Use the parameters that describe the distribution.
     -   For a Gaussian (normal) distribution - use mean and standard deviation
-    -   For a Poission distribution - use average event rate
+    -   For a Poisson distribution - use average event rate
     -   etc.
 -   Non Parametric data
     -   Use the median (the middle number when they are ranked from lowest to highest) and the interquartile range (the number 75% of the way up the list when ranked minus the number 25% of the way)
@@ -218,7 +218,7 @@ ggplot(dummy_2, aes(x = dummy_2)) +
 ```
 
 ::: notes
-Get them to plot the graphs. Explain that we are generating ramdom data from different distributions and plotting them.
+Get them to plot the graphs. Explain that we are generating random data from different distributions and plotting them.
 :::
 
 ## Calculating mean and standard deviation
@@ -267,7 +267,7 @@ status <- table(cchic$vital_status)
 prop.table(status)
 ```
 
-Contingency tables of frequences can also be tabulated with **table()**. For example:
+Contingency tables of frequencies can also be tabulated with **table()**. For example:
 
 ```{r}
 table(cchic$vital_status, cchic$chemo)
@@ -382,7 +382,7 @@ t.test(height ~ sex, data = cchic)
 ```
 
 ::: notes
-Tell them to do this. The default for t.test() is that variances are unequal and it produces Wech's statistic.
+Tell them to do this. The default for t.test() is that variances are unequal and it produces Welch's statistic.
 :::
 
 ## Doing the t-test
@@ -486,7 +486,7 @@ TukeyHSD(anovamodel)
 
 # Regression Modelling
 
-The most common use of regression modelling is to explore the relationship between two continuous variables, for example between `temp_c` and `temp_nc` in our data. We can first determine whether there is any sifnigicant correlation between the values, and if there is, plot the relationship.
+The most common use of regression modelling is to explore the relationship between two continuous variables, for example between `temp_c` and `temp_nc` in our data. We can first determine whether there is any significant correlation between the values, and if there is, plot the relationship.
 
 ```{r}
 cor.test(cchic$temp_c, cchic$temp_nc)
