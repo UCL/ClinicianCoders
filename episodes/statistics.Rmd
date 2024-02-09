@@ -45,9 +45,10 @@ cchic <- read_csv("data/clean_CCHIC.csv")
 -   Make sure `cchic` R dataframe from your work yesterday is loaded
 -   Ensure this includes the variables you created including `los`
 
-::: notes
+::::::::::::::::::::::::::::::::::::: instructor
+
 Help them load the dataset if needed. This is the same one they used in the morning. It should include the *length of stay* variable.
-:::
+:::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## The big picture
 
@@ -71,7 +72,9 @@ Continuous data is data that can take any value in the appropriate metric space.
 
 There is no limit in general to the mathematical operations we can carry out on continuous data.
 
-::: Side Note It is worth noting that *interval* level data are often included as **continuous** since they can mostly be treated just like ratio data, aside from the calculation of the *coefficient of variation*, but by strict definition they are discrete. :::
+::::::::::::::::::::::::::::::::::::: callout
+Side Note It is worth noting that *interval* level data are often included as **continuous** since they can mostly be treated just like ratio data, aside from the calculation of the *coefficient of variation*, but by strict definition they are discrete.
+:::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Discrete
 
@@ -196,9 +199,9 @@ What is the distribution of this data?
 -   Non parametric data
     -   The data can't be said to follow a known distribution
 
-::: notes
+::::::::::::::::::::::::::::::::::::: instructor
 Emphasise that parametric is not equal to normal.
-:::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Describing parametric and non-parametric data
 
@@ -233,9 +236,9 @@ ggplot(dummy_2, aes(x = dummy_2)) +
   geom_histogram()
 ```
 
-::: notes
+::::::::::::::::::::::::::::::::::::: instructor
 Get them to plot the graphs. Explain that we are generating random data from different distributions and plotting them.
-:::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Calculating mean and standard deviation
 
@@ -297,7 +300,7 @@ Which leads quite naturally to the consideration of any association between the 
 
 -   What is your hypothesis - what is your null hypothesis?
 
-::: Note
+::: callout
 Always: the level of the independent variable has no effect on the level of the dependent variable.
 :::
 
@@ -397,9 +400,9 @@ Is the difference between heights statistically significant?
 t.test(height ~ sex, data = cchic)
 ```
 
-::: notes
+::::::::::::::::::::::::::::::::::::: instructor
 Tell them to do this. The default for t.test() is that variances are unequal and it produces Welch's statistic.
-:::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Doing the t-test
 
@@ -407,9 +410,9 @@ Tell them to do this. The default for t.test() is that variances are unequal and
 t.test(height ~ sex, data = cchic)
 ```
 
-::: notes
+::::::::::::::::::::::::::::::::::::: instructor
 Quickly explain the main points of the output
-:::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Comparing counts
 
@@ -446,7 +449,9 @@ x <- chisq.test(cchic$sex, cchic$vital_status)
 summary(x)
 ```
 
-::: notes (important as it holds for results of all statistical tests) Get them to do this, then explain the output. Do the same test, assigning the result to a data object and explain how to access the contents of the data object to show, df, expected values, residuals etc. :::
+::::::::::::::::::::::::::::::::::::: instructor
+(important as it holds for results of all statistical tests) Get them to do this, then explain the output. Do the same test, assigning the result to a data object and explain how to access the contents of the data object to show, df, expected values, residuals etc.
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Non paramteric versions
 
@@ -475,9 +480,9 @@ ggplot(data = cchic, aes(x = los)) +
 wilcox.test(los ~ sex, data = cchic)
 ```
 
-::: notes
+::::::::::::::::::::::::::::::::::::: instructor
 Explain the output
-:::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## more than two levels of IV
 
