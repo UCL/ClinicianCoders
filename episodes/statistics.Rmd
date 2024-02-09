@@ -90,8 +90,6 @@ Interval data are numeric data that are ordered on a scale where the distance be
 
 ## Continuous variables
 
-::: columns
-::: column
 -   e.g. age, height, weight
 -   Have distributions:
     -   Gaussian
@@ -99,12 +97,8 @@ Interval data are numeric data that are ordered on a scale where the distance be
     -   Binomial
     -   Cauchy/Lorenz
 -   Can't be described
-:::
 
-::: column
 ![](../Images/ContinuousDistribution.png)
-:::
-:::
 
 ## What is normally distributed data?
 
@@ -118,44 +112,30 @@ Interval data are numeric data that are ordered on a scale where the distance be
 
 ## Types of discrete variables
 
-::: columns
-::: column
 -   Ordinal
     -   There is an order e.g. `care_level` where Level 3 \> Level 2 \> Level 1 etc.
     -   However, the difference between Level 1 and Level 2 critical care may not be the same as the difference between Level 2 and Level 3.
-:::
-
-::: column
+    
 ![](../Images/OrdinalData.png)
-:::
-:::
 
 ## Types of discrete data
 
-::: columns
-::: column
 -   Interval
     -   There is an order to data points (e.g. `age_cat` for age centile) and the difference between these points are equal (e.g. 10 years)
-:::
-
-::: column
+    
 ![](../Images/IntervalData.png)
-:::
-:::
 
 ## Describing data
 
 -   Continuous variables
 -   Discrete variables
 
-::: notes
+::: callout
 How do we convey information on what your data looks like, using numbers or figures?
 :::
 
 ## Describing continuous data.
 
-::: columns
-::: column
 First establish the distribution of the data. You can visualise this with a histogram.
 
 ```{r, eval = F}
@@ -164,17 +144,11 @@ ggplot(cchic, aes(x = age_years)) +
 ```
 
 What is the distribution of this data?
-:::
 
-::: column
 ![](../Images/hist_age.png)
-:::
-:::
 
 ## What is the distribution of height?
 
-::: columns
-::: column
 Try this command
 
 ```{r, eval = FALSE}
@@ -183,12 +157,8 @@ ggplot(data = cchic, aes(x = height)) +
 ```
 
 What is the distribution of this data?
-:::
 
-::: column
 ![](../Images/hist_height.png)
-:::
-:::
 
 ## Parametric vs non-parametric analysis
 
@@ -373,16 +343,10 @@ Is the difference between heights statistically significant?
 
 ## t-test
 
-::: columns
-::: column
 -   Compares means between two populations
 -   Paired vs. Unpaired
-:::
 
-::: column
 ![](../Images/Ttest.png)
-:::
-:::
 
 ## Assumptions of a t-test
 
