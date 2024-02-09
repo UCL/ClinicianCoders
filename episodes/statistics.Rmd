@@ -5,6 +5,22 @@ exercises: 20
 source: Rmd
 ---
 
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- To be able to describe the different types of data
+- To be able to do basic data exploration of a real dataset
+- To be able to calculate descriptive statistics
+- To be able to perform statistical inference on a dataset
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- How can I detect the type of data I have?
+- How can I make meaningful summaries of my data?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(error = TRUE)
 ```
