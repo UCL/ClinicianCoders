@@ -1,15 +1,21 @@
 ---
 title: "Basic Statistics"
-output: word_document
+teaching: 60
+exercises: 20
+source: Rmd
 ---
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(error=TRUE)
-# We will need this data later.
+knitr::opts_chunk$set(error = TRUE)
+```
+
+```{r libraries, message=FALSE, warning=FALSE}
+# Packages and data we'll use in this episode
 library(tidyverse)
 library(lubridate)
-cchic <- read_csv("data/intermediate_CCHIC.csv")
+cchic <- read_csv("data/clean_CCHIC.csv")
 ```
+
 
 ## Content
 
@@ -45,7 +51,7 @@ Just as data in general are of different types - for example numeric vs text dat
 
 ### Continuous
 
-Continuous data is data that can take any value in the appropriate metric space. Examples are variables like *height* and *temperature*. Very often this is any point on the real number line. Ratio data are data that can form ratios, such that a score of seventy is twice a score of thirty five, and where the intervals between adjacent values is equal. Ratio level data also have a 'true' zero (the phenomenon measured is absent), rather than an arbitrary of calibrated zero (zero degrees celsius is the freezing point of water.)
+Continuous data is data that can take any value in the appropriate metric space. Examples are variables like *height* and *temperature*. Very often this is any point on the real number line. Ratio data are data that can form ratios, such that a score of seventy is twice a score of thirty five, and where the intervals between adjacent values is equal. Ratio level data also have a 'true' zero (the phenomenon measured is absent), rather than an arbitrary of calibrated zero (zero degrees Celsius is the freezing point of water.)
 
 There is no limit in general to the mathematical operations we can carry out on continuous data.
 
@@ -382,7 +388,7 @@ Tell them to do this. The default for t.test() is that variances are unequal and
 ## Doing the t-test
 
 ```{r, echo = FALSE}
-t.test(height ~sex, data = cchic)
+t.test(height ~ sex, data = cchic)
 ```
 
 ::: notes
@@ -420,7 +426,7 @@ table(cchic$sex, cchic$vital_status)
 Start with `?chisq.test`. Then do the test.
 
 ```{r}
-x<-chisq.test(cchic$sex, cchic$vital_status)
+x <- chisq.test(cchic$sex, cchic$vital_status)
 summary(x)
 ```
 
@@ -465,40 +471,36 @@ While the t-test is sufficient where there are two levels of the IV, for situati
 quantile(cchic$creatinine)
 IQR(cchic$creatinine)
 
-cchic$creatininegroup <- cut(cchic$creatinine, breaks=c(15, 64, 83, 123,1533), labels = FALSE)
+cchic$creatininegroup <- cut(cchic$creatinine, breaks = c(15, 64, 83, 123, 1533), labels = FALSE)
 
-#cchic %>% 
+# cchic %>%
 #  mutate(creatininegroup = cut(cchic$creatinine, breaks=c(15, 64, 83, 123,1533), labels = FALSE))
 
 cchic$creatininegroup <- factor(cchic$creatininegroup)
 
-anovamodel <- aov(cchic$ph_abg~cchic$creatininegroup)
+anovamodel <- aov(cchic$ph_abg ~ cchic$creatininegroup)
 summary(anovamodel)
 
 TukeyHSD(anovamodel)
-
 ```
 
 # Regression Modelling
 
-The most common use of regression modelling is to explore the relationship between two continuous variables, for example between **temp_c** and \*\*temp_nc\* in our data. We can first determine whether there is any sifnigicant correlation between the values, and if there is, plot the relationship.
+The most common use of regression modelling is to explore the relationship between two continuous variables, for example between `temp_c` and `temp_nc` in our data. We can first determine whether there is any sifnigicant correlation between the values, and if there is, plot the relationship.
 
 ```{r}
+cor.test(cchic$temp_c, cchic$temp_nc)
 
-cor.test(cchic$temp_c,cchic$temp_nc)
-
-ggplot(cchic,aes(temp_c, temp_nc)) +
+ggplot(cchic, aes(temp_c, temp_nc)) +
   geom_point() +
   geom_smooth(method = "lm")
 
-
 ```
 
-Having decided that a further investigation of this relationship is worthwhile, we can create a linear model with the function **lm()**.
+Having decided that a further investigation of this relationship is worthwhile, we can create a linear model with the function `lm()`
 
 ``` {r}
-
-modelone <- lm(cchic$temp_nc~cchic$temp_c)
+modelone <- lm(cchic$temp_nc ~ cchic$temp_c)
 summary(modelone)
 
 ```
@@ -508,11 +510,10 @@ summary(modelone)
 Run the following code chunk and compare the results to the t test conducted earlier.
 
 ```{r}
-
-cchic %>% 
+cchic %>%
   mutate(sex = factor(sex))
 
-modelttest <- lm(cchic$height~cchic$sex)
+modelttest <- lm(cchic$height ~ cchic$sex)
 
 summary(modelttest)
 
@@ -520,8 +521,4 @@ summary(modelttest)
 
 ## Regression with a categorical IV (ANOVA)
 
-Use the **lm()** function to model the relatinship between cchic$creatininegroup and cchic$ph_abg.  Compare the results with the ANOVA carried out earlier.
-
-## Lunch
-
--   Feel free to explore the handout and go through the exercices again.
+Use the `lm()` function to model the relationship between `cchic$creatininegroup` and `cchic$ph_abg`.  Compare the results with the ANOVA carried out earlier.
