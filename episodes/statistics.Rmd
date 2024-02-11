@@ -29,9 +29,7 @@ knitr::opts_chunk$set(error = TRUE)
 # Packages and data we'll use in this episode
 library(tidyverse)
 library(lubridate)
-cchic <- read_csv("data/intermediate_CCHIC.csv")
 ```
-
 
 # Introduction
 
@@ -42,15 +40,32 @@ cchic <- read_csv("data/intermediate_CCHIC.csv")
 -   Descriptive Statistics
 -   Inferential Statistics
 
-## Wait!
+## Getting the data
 
--   Make sure `cchic` R dataframe from your work yesterday is loaded
--   Ensure this includes the variables you created including `los`
+In this episode, we will work with a subset of the [CCHIC](https://doi.org/10.1016/j.ijmedinf.2018.01.006)
+dataset. You can load the data directly in your R session by running the following script.
+
+```{r, eval=FALSE, echo=TRUE}
+## Create a data folder
+dir.create("data", showWarnings = FALSE) # `showWarnings = FALSE` avoids warning if the folder already exists
+download.file(
+    "https://raw.githubusercontent.com/UCL/ClinicianCoders/main/episodes/data/intermediate_CCHIC.csv",
+    destfile = "data/intermediate_CCHIC.csv"
+)
+```
 
 ::::::::::::::::::::::::::::::::::::: instructor
 
-Help them load the dataset if needed. This is the same one they used in the morning. It should include the *length of stay* variable.
+- Help them load the dataset if needed. This is the same one they used in the morning. It should include the *length of stay* variable.
+- Point out that these commands should be run only once, in the console
 :::::::::::::::::::::::::::::::::::::::::::::::::
+
+We can then load the data locally by running
+
+```{r load-data}
+cchic <- read_csv("data/intermediate_CCHIC.csv")
+```
+
 
 ## The big picture
 
