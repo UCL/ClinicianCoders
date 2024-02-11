@@ -29,7 +29,7 @@ knitr::opts_chunk$set(error = TRUE)
 # Packages and data we'll use in this episode
 library(tidyverse)
 library(lubridate)
-cchic <- read_csv("data/clean_CCHIC.csv")
+cchic <- read_csv("data/intermediate_CCHIC.csv")
 ```
 
 
