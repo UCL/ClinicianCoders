@@ -98,11 +98,11 @@ Interval data are numeric data that are ordered on a scale where the distance be
     -   Cauchy/Lorenz
 -   Can't be described
 
-![](../Images/ContinuousDistribution.png)
+![](./fig/ContinuousDistribution.png)
 
 ## What is normally distributed data?
 
-![](../Images/NormalDistribution.png)
+![](./fig/NormalDistribution.png)
 
 ## Types of discrete variables
 
@@ -116,14 +116,14 @@ Interval data are numeric data that are ordered on a scale where the distance be
     -   There is an order e.g. `care_level` where Level 3 \> Level 2 \> Level 1 etc.
     -   However, the difference between Level 1 and Level 2 critical care may not be the same as the difference between Level 2 and Level 3.
     
-![](../Images/OrdinalData.png)
+![](./fig/OrdinalData.png)
 
 ## Types of discrete data
 
 -   Interval
     -   There is an order to data points (e.g. `age_cat` for age centile) and the difference between these points are equal (e.g. 10 years)
     
-![](../Images/IntervalData.png)
+![](./fig/IntervalData.png)
 
 ## Describing data
 
@@ -145,7 +145,7 @@ ggplot(cchic, aes(x = age_years)) +
 
 What is the distribution of this data?
 
-![](../Images/hist_age.png)
+![](./fig/HistogramAge.png)
 
 ## What is the distribution of height?
 
@@ -158,7 +158,7 @@ ggplot(data = cchic, aes(x = height)) +
 
 What is the distribution of this data?
 
-![](../Images/hist_height.png)
+![](./fig/hist_height.png)
 
 ## Parametric vs non-parametric analysis
 
@@ -282,7 +282,7 @@ Always: the level of the independent variable has no effect on the level of the 
 
 ## What is a p-value?
 
-![](../Images/pValue.png)
+![](./fig/pValue.png)
 
 [The Lady Tasting Tea](https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/cem.3239)
 
@@ -294,7 +294,7 @@ Depending on the data under consideration and our purpose, we choose a threshold
 
 ## What we are usually hoping...
 
-![](../Images/pValue2.png)
+![](./fig/pValue2.png)
 
 ## Testing significance
 
@@ -346,7 +346,7 @@ Is the difference between heights statistically significant?
 -   Compares means between two populations
 -   Paired vs. Unpaired
 
-![](../Images/Ttest.png)
+![](./fig/Ttest.png)
 
 ## Assumptions of a t-test
 
