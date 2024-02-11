@@ -33,6 +33,8 @@ cchic <- read_csv("data/intermediate_CCHIC.csv")
 ```
 
 
+# Introduction
+
 ## Content
 
 -   Types of Data
@@ -64,9 +66,9 @@ Help them load the dataset if needed. This is the same one they used in the morn
 Just as data in general are of different types - for example numeric vs text data - statistical data are assigned to different *levels of measure* The level of measure determines how we can describe and model the data.
 :::
 
-## Data types
+# Data types
 
-### Continuous
+## Continuous
 
 Continuous data is data that can take any value in the appropriate metric space. Examples are variables like *height* and *temperature*. Very often this is any point on the real number line. Ratio data are data that can form ratios, such that a score of seventy is twice a score of thirty five, and where the intervals between adjacent values is equal. Ratio level data also have a 'true' zero (the phenomenon measured is absent), rather than an arbitrary of calibrated zero (zero degrees Celsius is the freezing point of water.)
 
@@ -76,7 +78,7 @@ There is no limit in general to the mathematical operations we can carry out on 
 Side Note It is worth noting that *interval* level data are often included as **continuous** since they can mostly be treated just like ratio data, aside from the calculation of the *coefficient of variation*, but by strict definition they are discrete.
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Discrete
+## Discrete
 
 Discrete data take their value from a closed set of possible values. There is no bound as to what the elements of the set may be - they can be integer values, fractional values, or entirely non-numeric.
 
@@ -88,7 +90,7 @@ Interval
 
 Interval data are numeric data that are ordered on a scale where the distance between measuring points is equal. Unlike ratio data, the zero point on an interval scale is an arbitrarily chosen calibration and data measurements do not form ratios.
 
-## Continuous variables
+# Continuous variables
 
 -   e.g. age, height, weight
 -   Have distributions:
@@ -104,28 +106,30 @@ Interval data are numeric data that are ordered on a scale where the distance be
 
 ![](./fig/NormalDistribution.png)
 
-## Types of discrete variables
 
--   Nominal
-    -   e.g. hair colour, types of antibiotics
-    -   There is no order between the data types (e.g. blonde, brunette, red hair)
+# Discrete variables
 
 ## Types of discrete variables
 
--   Ordinal
-    -   There is an order e.g. `care_level` where Level 3 \> Level 2 \> Level 1 etc.
-    -   However, the difference between Level 1 and Level 2 critical care may not be the same as the difference between Level 2 and Level 3.
+### Nominal
+
+-   e.g. hair colour, types of antibiotics
+-   There is no order between the data types (e.g. blonde, brunette, red hair)
+
+### Ordinal
+
+-   There is an order e.g. `care_level` where Level 3 \> Level 2 \> Level 1 etc.
+-   However, the difference between Level 1 and Level 2 critical care may not be the same as the difference between Level 2 and Level 3.
     
 ![](./fig/OrdinalData.png)
 
-## Types of discrete data
+### Interval
 
--   Interval
-    -   There is an order to data points (e.g. `age_cat` for age centile) and the difference between these points are equal (e.g. 10 years)
+-   There is an order to data points (e.g. `age_cat` for age centile) and the difference between these points are equal (e.g. 10 years)
     
 ![](./fig/IntervalData.png)
 
-## Describing data
+# Describing data
 
 -   Continuous variables
 -   Discrete variables
@@ -134,7 +138,7 @@ Interval data are numeric data that are ordered on a scale where the distance be
 How do we convey information on what your data looks like, using numbers or figures?
 :::
 
-## Describing continuous data.
+## Describing continuous data
 
 First establish the distribution of the data. You can visualise this with a histogram.
 
@@ -147,7 +151,7 @@ What is the distribution of this data?
 
 ![](./fig/HistogramAge.png)
 
-## What is the distribution of height?
+### What is the distribution of height?
 
 Try this command
 
@@ -160,7 +164,7 @@ What is the distribution of this data?
 
 ![](./fig/hist_height.png)
 
-## Parametric vs non-parametric analysis
+### Parametric vs non-parametric analysis
 
 -   Parametric analysis assumes that
     -   The data follows a known distribution
@@ -173,7 +177,7 @@ What is the distribution of this data?
 Emphasise that parametric is not equal to normal.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Describing parametric and non-parametric data
+#### Describing parametric and non-parametric data
 
 How do you use numbers to convey what your data looks like.
 
@@ -186,7 +190,7 @@ How do you use numbers to convey what your data looks like.
     -   Use the median (the middle number when they are ranked from lowest to highest) and the interquartile range (the number 75% of the way up the list when ranked minus the number 25% of the way)
 -   You can use the command `summary(data_frame_name)` to get these numbers for each variable.
 
-## Mean versus standard deviation
+#### Mean and standard deviation
 
 -   What does standard deviation mean?
 -   Both graphs have the same mean (center), but the second one has data which is more spread out.
@@ -210,7 +214,7 @@ ggplot(dummy_2, aes(x = dummy_2)) +
 Get them to plot the graphs. Explain that we are generating random data from different distributions and plotting them.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Calculating mean and standard deviation
+##### Calculating mean and standard deviation
 
 ```{r, eval = T}
 mean(cchic$height, na.rm = TRUE)
@@ -229,7 +233,7 @@ sqrt(varheight) == sdheight
 
 The `na.rm` argument tells R to ignore missing values in the variable.
 
-## Calculating median and interquartile range
+#### Mean and interquartile range
 
 ```{r, eval = T}
 median(cchic$age_years, na.rm = TRUE)
@@ -264,7 +268,7 @@ table(cchic$vital_status, cchic$chemo)
 
 Which leads quite naturally to the consideration of any association between the observed frequencies.
 
-## Inferential statistics
+# Inferential statistics
 
 ## Meaningful analysis
 
@@ -292,9 +296,11 @@ Fisher informally characterised the *p-value* as an estimate of the strength of 
 
 Depending on the data under consideration and our purpose, we choose a threshold of evidence for the rejection of the null hypothesis. For many purposes, a confidence level of 95% is chosen, which means that a p-value of less than 0.05 is sufficient to reject the null hypothesis. In other circumstances and confidence level of 99% may be appropriate, or even higher.
 
-## What we are usually hoping...
+::: callout
+**What we are usually hoping for...**
 
 ![](./fig/pValue2.png)
+:::
 
 ## Testing significance
 
@@ -308,7 +314,7 @@ Depending on the data under consideration and our purpose, we choose a threshold
 
 **0.05** is not a magic number.
 
-## Comparing means
+### Comparing means
 
 It all starts with a hypothesis
 
@@ -317,7 +323,7 @@ It all starts with a hypothesis
 -   Alternate hypothesis
     -   "There is a difference in mean height between men and women"
 
-## More on hypothesis testing
+### More on hypothesis testing
 
 -   The null hypothesis (H0) assumes that the true mean difference (μd) is equal to zero.
 
@@ -341,14 +347,14 @@ cchic %>%
 
 Is the difference between heights statistically significant?
 
-## t-test
+### t-test
 
 -   Compares means between two populations
 -   Paired vs. Unpaired
 
 ![](./fig/Ttest.png)
 
-## Assumptions of a t-test
+#### Assumptions of a t-test
 
 -   One independent categorical variable with 2 groups and one dependent continuous variable
 
@@ -358,7 +364,7 @@ Is the difference between heights statistically significant?
 
 -   For students' original t-statistic, that the variances in both groups are more or less equal. This constraint should probably be abandoned in favour of always using a conservative test.
 
-## Doing a t-test
+#### Doing a t-test
 
 ```{r, eval = FALSE}
 t.test(height ~ sex, data = cchic)
@@ -367,8 +373,6 @@ t.test(height ~ sex, data = cchic)
 ::::::::::::::::::::::::::::::::::::: instructor
 Tell them to do this. The default for t.test() is that variances are unequal and it produces Welch's statistic.
 ::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Doing the t-test
 
 ```{r, echo = FALSE}
 t.test(height ~ sex, data = cchic)
@@ -386,14 +390,14 @@ Quickly explain the main points of the output
 table(cchic$sex, cchic$vital_status)
 ```
 
-## What is our hypothesis?
+### What is our hypothesis?
 
 -   Null hypothesis
     -   There is no difference in survival between men and women
 -   Alternate hypothesis
     -   There is a difference in survival between men and women
 
-## Assumptions of the chi-squared test.
+### Assumptions of the chi-squared test.
 
 1.  Data in cells should be frequencies or counts *not* percentages
 2.  Levels/Categories are mutually exclusive -- here being a alive/dead applies
@@ -404,7 +408,7 @@ table(cchic$sex, cchic$vital_status)
 
 `Biochem Med (Zagreb). 2013 Jun; 23(2): 143–149.`
 
-## Doing the chi-squared test.
+### Doing the chi-squared test.
 
 Start with `?chisq.test`. Then do the test.
 
@@ -417,7 +421,7 @@ summary(x)
 (important as it holds for results of all statistical tests) Get them to do this, then explain the output. Do the same test, assigning the result to a data object and explain how to access the contents of the data object to show, df, expected values, residuals etc.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Non paramteric versions
+## Non-parametric versions
 
 Is length of stay different between genders?
 
@@ -427,7 +431,7 @@ ggplot(data = cchic, aes(x = los)) +
   facet_grid(~sex)
 ```
 
-## When do you use a non-parametric test?
+### When do you use a non-parametric test?
 
 -   When any of the the following are true.
     -   Level of measurement is nominal or ordinal
@@ -436,9 +440,9 @@ ggplot(data = cchic, aes(x = los)) +
     -   Unequal variance
     -   Continuous data collapsed into small number of categories
 
-## Using the Mann Whitney test
+### Using the Mann-Whitney test
 
-`??Mann-Whitney` will show you that the command is actually called `wilcox.test`.t
+`??Mann-Whitney` will show you that the command is actually called `wilcox.test`.
 
 ```{r}
 wilcox.test(los ~ sex, data = cchic)
@@ -448,7 +452,7 @@ wilcox.test(los ~ sex, data = cchic)
 Explain the output
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## more than two levels of IV
+## More than two levels of IV
 
 While the t-test is sufficient where there are two levels of the IV, for situations where there are more than two, we use the **ANOVA** family of procedures. To show this, we will create a variable that subsets our data by *creatinine* levels. If the ANOVA result is statistically significant, we will use a post-hoc test method to do pairwise comparisons (here Tukey's Honest Significant Differences.)
 
@@ -469,7 +473,7 @@ summary(anovamodel)
 TukeyHSD(anovamodel)
 ```
 
-# Regression Modelling
+## Regression Modelling
 
 The most common use of regression modelling is to explore the relationship between two continuous variables, for example between `temp_c` and `temp_nc` in our data. We can first determine whether there is any significant correlation between the values, and if there is, plot the relationship.
 
@@ -490,7 +494,7 @@ summary(modelone)
 
 ```
 
-## Regression with a categorical IV (the t-test)
+### Regression with a categorical IV (the t-test)
 
 Run the following code chunk and compare the results to the t test conducted earlier.
 
@@ -504,6 +508,6 @@ summary(modelttest)
 
 ```
 
-## Regression with a categorical IV (ANOVA)
+### Regression with a categorical IV (ANOVA)
 
 Use the `lm()` function to model the relationship between `cchic$creatininegroup` and `cchic$ph_abg`.  Compare the results with the ANOVA carried out earlier.
