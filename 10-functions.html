@@ -409,13 +409,12 @@ again. We may also obtain similar data from a different source in the
 future.</p>
 <p>In this lesson, we’ll learn how to write a function so that we can
 repeat several operations with a single command.</p>
-<div id="what-is-a-function" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="what-is-a-function" class="callout-inner">
-<h3 class="callout-title">What is a function?<a class="anchor" aria-label="anchor" href="#what-is-a-function"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="what-is-a-function">What is a function?<a class="anchor" aria-label="anchor" href="#what-is-a-function"></a></h3>
 <div class="callout-content">
 <p>Functions gather a sequence of operations into a whole, preserving it
 for ongoing use. Functions provide:</p>
@@ -472,13 +471,12 @@ operators to it.</p>
 assigned to those variables so that we can use them inside the function.
 Inside the function, we use a <a href="reference.html#return-statement">return statement</a> to send a
 result back to whoever asked for it.</p>
-<div id="tip" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="tip" class="callout-inner">
-<h3 class="callout-title">Tip<a class="anchor" aria-label="anchor" href="#tip"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="tip">Tip<a class="anchor" aria-label="anchor" href="#tip"></a></h3>
 <div class="callout-content">
 <p>One feature unique to R is that the return statement is not required.
 R automatically returns whichever variable is on the last line of the
@@ -879,7 +877,7 @@ that the output is much more informative than a vector of numbers.</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>calcGDP <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, <span class="at">year=</span><span class="cn">NULL</span>, <span class="at">country=</span><span class="cn">NULL</span>) {</span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>calcGDP <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, <span class="at">year=</span><span class="cn">NULL</span>, <span class="at">country=</span><span class="cn">NULL</span>) {</span></code></pre>
 </div>
 <p>Here we’ve added two arguments, <code>year</code>, and
 <code>country</code>. We’ve set <em>default arguments</em> for both as
@@ -909,13 +907,12 @@ for later. Now, we can use it to calculate the GDP for:</p>
 <li>A single combination of year and country.</li>
 </ul><p>By using <code>%in%</code> instead, we can also give multiple years
 or countries to those arguments.</p>
-<div id="tip-pass-by-value" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="tip-pass-by-value" class="callout-inner">
-<h3 class="callout-title">Tip: Pass by value<a class="anchor" aria-label="anchor" href="#tip-pass-by-value"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="tip-pass-by-value">Tip: Pass by value<a class="anchor" aria-label="anchor" href="#tip-pass-by-value"></a></h3>
 <div class="callout-content">
 <p>Functions in R almost always make copies of the data to operate on
 inside of a function body. When we modify <code>dat</code> inside the
@@ -928,13 +925,12 @@ the function, stay inside the body of the function.</p>
 </div>
 </div>
 </div>
-<div id="tip-function-scope" class="callout callout">
+<div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="tip-function-scope" class="callout-inner">
-<h3 class="callout-title">Tip: Function scope<a class="anchor" aria-label="anchor" href="#tip-function-scope"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="tip-function-scope">Tip: Function scope<a class="anchor" aria-label="anchor" href="#tip-function-scope"></a></h3>
 <div class="callout-content">
 <p>Another important concept is scoping: any variables (or functions!)
 you create or modify inside the body of a function only exist for the
@@ -949,10 +945,10 @@ are not modified in any way when executing a function.</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>  gdp <span class="ot">&lt;-</span> dat<span class="sc">$</span>pop <span class="sc">*</span> dat<span class="sc">$</span>gdpPercap</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  new <span class="ot">&lt;-</span> <span class="fu">cbind</span>(dat, <span class="at">gdp=</span>gdp)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(new)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>  gdp <span class="ot">&lt;-</span> dat<span class="sc">$</span>pop <span class="sc">*</span> dat<span class="sc">$</span>gdpPercap</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>  new <span class="ot">&lt;-</span> <span class="fu">cbind</span>(dat, <span class="at">gdp=</span>gdp)</span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>  <span class="fu">return</span>(new)</span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a><span class="er">}</span></span></code></pre>
 </div>
 <p>Finally, we calculated the GDP on our new subset, and created a new
 data frame with that column added. This means when we call the function
@@ -1059,13 +1055,12 @@ prints out the text wrapped with the <code>wrapper</code>:</p>
 </div>
 </div>
 </div>
-<div id="tip-1" class="callout callout">
+<div id="callout5" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="tip-1" class="callout-inner">
-<h3 class="callout-title">Tip<a class="anchor" aria-label="anchor" href="#tip-1"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="tip-1">Tip<a class="anchor" aria-label="anchor" href="#tip-1"></a></h3>
 <div class="callout-content">
 <p>R has some unique aspects that can be exploited when performing more
 complicated operations. We will not be writing anything that requires
@@ -1076,13 +1071,12 @@ Wickham.</p>
 </div>
 </div>
 </div>
-<div id="tip-testing-and-documenting" class="callout callout">
+<div id="callout6" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="tip-testing-and-documenting" class="callout-inner">
-<h3 class="callout-title">Tip: Testing and documenting<a class="anchor" aria-label="anchor" href="#tip-testing-and-documenting"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="tip-testing-and-documenting">Tip: Testing and documenting<a class="anchor" aria-label="anchor" href="#tip-testing-and-documenting"></a></h3>
 <div class="callout-content">
 <p>It’s important to both test functions and document them:
 Documentation helps you, and others, understand what the purpose of your
@@ -1188,7 +1182,7 @@ R.</li>
   "identifier": "https://UCL.github.io/ClinicianCoders/10-functions.html",
   "dateCreated": "2023-10-26",
   "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
