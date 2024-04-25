@@ -84,11 +84,11 @@
   UCL ClinicianCoders - R for Reproducible Scientific Analysis
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 47%" class="percentage">
-    47%
+<aside class="col-md-12 lesson-progress"><div style="width: 57%" class="percentage">
+    57%
   </div>
   <div class="progress software">
-    <div class="progress-bar software" role="progressbar" style="width: 47%" aria-valuenow="47" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar software" role="progressbar" style="width: 57%" aria-valuenow="57" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -248,7 +248,7 @@
 <div class="accordion accordion-flush" id="accordionFlush13">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading13">
-        <a href="12-plyr.html">12. Splitting and Combining Data Frames with plyr</a>
+        <a href="12-dplyr.html">12. Data Frame Manipulation with dplyr</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -257,7 +257,7 @@
 <div class="accordion accordion-flush" id="accordionFlush14">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading14">
-        <a href="13-dplyr.html">13. Data Frame Manipulation with dplyr</a>
+        <a href="13-tidyr.html">13. Data Frame Manipulation with tidyr</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -266,7 +266,7 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="14-tidyr.html">14. Data Frame Manipulation with tidyr</a>
+        <a href="14-knitr-markdown.html">14. Producing Reports With knitr</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -275,25 +275,7 @@
 <div class="accordion accordion-flush" id="accordionFlush16">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading16">
-        <a href="statistics.html">15. Basic Statistics</a>
-    </div><!--/div.accordion-header-->
-        
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush17">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading17">
-        <a href="15-knitr-markdown.html">16. Producing Reports With knitr</a>
-    </div><!--/div.accordion-header-->
-        
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush18">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading18">
-        <a href="16-wrap-up.html">17. Writing Good Software</a>
+        <a href="15-wrap-up.html">15. Writing Good Software</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -357,7 +339,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Vectorization</h1>
-        <p>Last updated on 2024-04-03 |
+        <p>Last updated on 2024-04-25 |
         
         <a href="https://github.com/UCL/ClinicianCoders/edit/main/episodes/09-vectorization.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -481,7 +463,7 @@ tail of the data frame to make sure it worked.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Solution to challenge 1</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Let’s try this on the <code>pop</code> column of the
 <code>gapminder</code> dataset.</p>
@@ -531,7 +513,7 @@ Again, do not worry about which is which.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Solution to challenge 2</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Refresh your plotting skills by plotting population in millions
 against year.</p>
@@ -708,7 +690,7 @@ reference guide</a></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Solution to challenge 3</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Given the following matrix:</p>
 <div class="codewrapper sourceCode" id="cb28">
@@ -785,7 +767,7 @@ n=10,000?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Challenge 4</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>We’re interested in looking at the sum of the following sequence of
 fractions:</p>
@@ -994,8 +976,8 @@ length</code></pre>
   "url": "https://UCL.github.io/ClinicianCoders/09-vectorization.html",
   "identifier": "https://UCL.github.io/ClinicianCoders/09-vectorization.html",
   "dateCreated": "2023-10-26",
-  "dateModified": "2024-04-03",
-  "datePublished": "2024-04-23"
+  "dateModified": "2024-04-25",
+  "datePublished": "2024-04-25"
 }
 
   </script><script>
