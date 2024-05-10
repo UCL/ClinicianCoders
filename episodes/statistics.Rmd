@@ -45,7 +45,7 @@ gapminder <- gapminder %>%
   mutate(european = continent == "Europe")
 ```
 
-We are going to use the data from the gapminder package.  We have added a variable *european* indicating if a country is in Europe.
+We are going to use the data from the gapminder package.  We have added a variable *European* indicating if a country is in Europe.
 
 ## The big picture
 
@@ -105,7 +105,7 @@ What is the distribution of this data?
 
 ## Parametric vs non-parametric analysis
 
--   Parametric analsysis assumes that
+-   Parametric analysis assumes that
     -   The data follows a known distribution
     -   It can be described using *parameters*
     -   Examples of distributions include, normal, Poisson, exponential.
@@ -200,7 +200,7 @@ prop.table(continenttable)
 
 Contingency tables of frequencies can also be tabulated with **table()**. For example:
 ```{r}
-# need a better table!  This one is dumb.  Howabout count of country by continent?
+# need a better table!  This one is dumb.  How about count of country by continent?
 
 table(gapminder$continent[gapminder$year == 2007], gapminder$country[gapminder$year == 2007])
 ```
@@ -291,7 +291,7 @@ t.test(pop ~ european, data = gapminder)$parameter
 Notice that the summary()** of the test contains more data than is output by default.
  
 
-Write a paragraph in markdown format reporting this test result including the t statistic, the degress of freedom, the confidence interval and the p-value to 4 places.  To do this include your r code **inline** with your text, rather than in an R code chunk.
+Write a paragraph in markdown format reporting this test result including the t-statistic, the degrees of freedom, the confidence interval and the p-value to 4 places.  To do this include your r code **inline** with your text, rather than in an R code chunk.
 
 ### T Test Result
 
@@ -300,9 +300,9 @@ t.test(pop ~european, data = gapminder)$p.value,4)`).
 
 (Can you get p to display to four places?  Cf *format()*.)
 
-## more than two levels of IV
+## More than two levels of IV
 
-While the t-test is sufficient where there are two levels of the IV, for situations where there are more than two, we use the **ANOVA** family of procedures. To show this, we will create a variable that subsets our data by *per capita gdp* levels. If the ANOVA result is statistically significant, we will use a post-hoc test method to do pairwise comparisons (here Tukey's Honest Significant Differences.)
+While the t-test is sufficient where there are two levels of the IV, for situations where there are more than two, we use the **ANOVA** family of procedures. To show this, we will create a variable that subsets our data by *per capita GDP* levels. If the ANOVA result is statistically significant, we will use a post-hoc test method to do pairwise comparisons (here Tukey's Honest Significant Differences.)
 
 ```{r}
 quantile(gapminder$gdpPercap)
@@ -320,7 +320,7 @@ TukeyHSD(anovamodel)
 
 # Regression Modelling
 
-The most common use of regression modelling is to explore the relationship between two continuous variables, for example between **temp_c** and \*\*temp_nc\* in our data. We can first determine whether there is any sifnigicant correlation between the values, and if there is, plot the relationship.
+The most common use of regression modelling is to explore the relationship between two continuous variables, for example between **temp_c** and \*\*temp_nc\* in our data. We can first determine whether there is any significant correlation between the values, and if there is, plot the relationship.
 
 ```{r}
 cor.test(gapminder$gdpPercap, gapminder$lifeExp)
@@ -330,7 +330,7 @@ ggplot(gapminder, aes(gdpPercap, log(lifeExp))) +
   geom_smooth()
 ```
 
-Having decided that a further investigation of this relationship is worthwhile, we can create a linear model with the function **lm()**.
+Having decided that a further investigation of this relationship is worthwhile, we can create a linear model with the function `lm()`.
 
 ``` {r}
 modelone <- lm(gapminder$gdpPercap ~ gapminder$lifeExp)
@@ -352,9 +352,9 @@ summary(modelttest)
 
 ## Regression with a categorical IV (ANOVA)
 
-Use the **lm()** function to model the relatinship between gapminder$gdpGroup
-and gapminder$pop.  Compare the results with the ANOVA carried out earlier.
+Use the `lm()` function to model the relationship between `gapminder$gdpGroup`
+and `gapminder$pop`. Compare the results with the ANOVA carried out earlier.
 
 ## Lunch
 
--   Feel free to explore the handout and go through the exercices again.
+-   Feel free to explore the handout and go through the exercises again.
