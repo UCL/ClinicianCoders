@@ -72,6 +72,7 @@ episodes:
 - 11-writing-data.Rmd
 - 12-dplyr.Rmd
 - 13-tidyr.Rmd
+- statistics.Rmd
 - 14-knitr-markdown.Rmd
 - 15-wrap-up.Rmd
 
