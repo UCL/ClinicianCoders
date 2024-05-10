@@ -21,11 +21,6 @@ source: Rmd
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-```{r, include = FALSE}
-# set output options for 'clean' markdown output
-knitr::opts_chunk$set(error = TRUE, echo = FALSE, warning = TRUE, comment = "", message = FALSE)
-```
-
 ## Content
 
 -   Types of Data
