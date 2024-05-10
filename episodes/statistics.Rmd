@@ -61,19 +61,17 @@ We are going to use the data from the gapminder package.  We have added a variab
 Just as data in general are of different types - for example numeric vs text data - statistical data are assigned to different *levels of measure*. The level of measure determines how we can describe and model the data.
 :::
 
-## Describing data
+# Describing data
 
 -   Continuous variables
 -   Discrete variables
 
-::: notes
+::: callout
 How do we convey information on what your data looks like, using numbers or figures?
 :::
 
-## Describing continuous data.
+### Describing continuous data.
 
-::: columns
-::: column
 First establish the distribution of the data. You can visualise this with a histogram.
 
 ```{r}
@@ -82,22 +80,13 @@ ggplot(gapminder, aes(x = gdpPercap)) +
 ```
 
 What is the distribution of this data?
-:::
 
-::: column
-![](../Images/hist_age.png)
-:::
-:::
-
-## What is the distribution of population?
-
-::: columns
-::: column
+### What is the distribution of population?
 
 The raw values are difficult to visualise, so we can take the log of the values and log those.  Try this command
 
 ```{r include=TRUE}
-ggplot(data = gapminder, aes(y = log(pop))) +
+ggplot(data = gapminder, aes(log(pop))) +
   geom_histogram()
 ```
 
@@ -112,18 +101,18 @@ What is the distribution of this data?
 -   Non parametric data
     -   The data can't be said to follow a known distribution
 
-::: notes
+::::::::::::::::::::::::::::::::::::: instructor
 Emphasise that parametric is not equal to normal.
-:::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Describing parametric and non-parametric data
+### Describing parametric and non-parametric data
 
 How do you use numbers to convey what your data looks like.
 
 -   Parametric data
     -   Use the parameters that describe the distribution.
     -   For a Gaussian (normal) distribution - use mean and standard deviation
-    -   For a Poission distribution - use average event rate
+    -   For a Poisson distribution - use average event rate
     -   etc.
 -   Non Parametric data
     -   Use the median (the middle number when they are ranked from lowest to highest) and the interquartile range (the number 75% of the way up the list when ranked minus the number 25% of the way)
@@ -148,19 +137,19 @@ ggplot(dummy_2, aes(x = dummy_2)) +
   geom_histogram()
 ```
 
-::: notes
+::::::::::::::::::::::::::::::::::::: instructor
 Get them to plot the graphs. Explain that we are generating random data from different distributions and plotting them.
-:::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Calculating mean and standard deviation
+### Calculating mean and standard deviation
 
-```{r, eval = T, include = TRUE}
+```{r}
 mean(gapminder$pop, na.rm = TRUE)
 ```
 
 Calculate the standard deviation and confirm that it is the square root of the variance:
 
-```{r, eval = T include = T}
+```{r}
 sdpopulation <- sd(gapminder$pop, na.rm = TRUE)
 print(sdpopulation)
 
@@ -171,9 +160,9 @@ sqrt(varpopulation) == sdpopulation
 
 The `na.rm` argument tells R to ignore missing values in the variable.
 
-## Calculating median and interquartile range
+### Calculating median and interquartile range
 
-```{r, eval = T}
+```{r}
 median(gapminder$pop, na.rm = TRUE)
 ```
 
@@ -193,12 +182,13 @@ table(gapminder$continent)
 
 -   Proportions
 
-```{r, eval = T}
+```{r}
 continenttable <- table(gapminder$continent)
 prop.table(continenttable)
 ```
 
 Contingency tables of frequencies can also be tabulated with **table()**. For example:
+
 ```{r}
 # need a better table!  This one is dumb.  How about count of country by continent?
 
@@ -207,13 +197,13 @@ table(gapminder$continent[gapminder$year == 2007], gapminder$country[gapminder$y
 
 Which leads quite naturally to the consideration of any association between the observed frequencies.
 
-## Inferential statistics
+# Inferential statistics
 
 ## Meaningful analysis
 
 -   What is your hypothesis - what is your null hypothesis?
 
-::: Note
+::: callout
 Always: the level of the independent variable has no effect on the level of the dependent variable.
 :::
 
@@ -271,7 +261,7 @@ Is the difference between heights statistically significant?
 
 ## t-test
 
-## Assumptions of a t-test
+### Assumptions of a t-test
 
 -   One independent categorical variable with 2 groups and one dependent continuous variable
 
@@ -293,10 +283,10 @@ Notice that the summary()** of the test contains more data than is output by def
 
 Write a paragraph in markdown format reporting this test result including the t-statistic, the degrees of freedom, the confidence interval and the p-value to 4 places.  To do this include your r code **inline** with your text, rather than in an R code chunk.
 
-### T Test Result
+### t-test result
 
-Testing supported the rejection of the null hypothesis that there is no difference between mean populations of European and non-European participants (**t**=`r round(t.test(pop ~european, data = gapminder)$statistic,4)`, **df**= `r round(t.test(pop ~european, data = gapminder)$parameter,4)`, **p**= `r round(
-t.test(pop ~european, data = gapminder)$p.value,4)`).
+Testing supported the rejection of the null hypothesis that there is no difference between mean populations of European and non-European participants (**t**=`r round(t.test(pop ~european, data = gapminder)$statistic,4)`, **df**= `r round(t.test(pop ~european, data = gapminder)$parameter,4)`,
+**p**= `r round( t.test(pop ~european, data = gapminder)$p.value,4)`).
 
 (Can you get p to display to four places?  Cf *format()*.)
 
@@ -320,7 +310,7 @@ TukeyHSD(anovamodel)
 
 # Regression Modelling
 
-The most common use of regression modelling is to explore the relationship between two continuous variables, for example between **temp_c** and \*\*temp_nc\* in our data. We can first determine whether there is any significant correlation between the values, and if there is, plot the relationship.
+The most common use of regression modelling is to explore the relationship between two continuous variables, for example between `gdpPercap` and `lifeExp` in our data. We can first determine whether there is any significant correlation between the values, and if there is, plot the relationship.
 
 ```{r}
 cor.test(gapminder$gdpPercap, gapminder$lifeExp)
