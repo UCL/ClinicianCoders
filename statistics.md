@@ -31,7 +31,7 @@ source: Rmd
 ## Data
 
 
-```r
+``` r
 # We will need these libraries and this data later.
 library(tidyverse)
 library(lubridate)
@@ -71,12 +71,12 @@ How do we convey information on what your data looks like, using numbers or figu
 First establish the distribution of the data. You can visualise this with a histogram.
 
 
-```r
+``` r
 ggplot(gapminder, aes(x = gdpPercap)) +
   geom_histogram()
 ```
 
-```output
+``` output
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
@@ -89,12 +89,12 @@ What is the distribution of this data?
 The raw values are difficult to visualise, so we can take the log of the values and log those.  Try this command
 
 
-```r
+``` r
 ggplot(data = gapminder, aes(log(pop))) +
   geom_histogram()
 ```
 
-```output
+``` output
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
@@ -134,7 +134,7 @@ How do you use numbers to convey what your data looks like.
 -   Both graphs have the same mean (center), but the second one has data which is more spread out.
 
 
-```r
+``` r
 # small standard deviation
 dummy_1 <- rnorm(1000, mean = 10, sd = 0.5)
 dummy_1 <- as.data.frame(dummy_1)
@@ -142,13 +142,13 @@ ggplot(dummy_1, aes(x = dummy_1)) +
   geom_histogram()
 ```
 
-```output
+``` output
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
 <img src="fig/statistics-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
-```r
+``` r
 # larger standard deviation
 dummy_2 <- rnorm(1000, mean = 10, sd = 200)
 dummy_2 <- as.data.frame(dummy_2)
@@ -156,7 +156,7 @@ ggplot(dummy_2, aes(x = dummy_2)) +
   geom_histogram()
 ```
 
-```output
+``` output
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
@@ -169,40 +169,40 @@ Get them to plot the graphs. Explain that we are generating random data from dif
 ### Calculating mean and standard deviation
 
 
-```r
+``` r
 mean(gapminder$pop, na.rm = TRUE)
 ```
 
-```output
+``` output
 [1] 29601212
 ```
 
 Calculate the standard deviation and confirm that it is the square root of the variance:
 
 
-```r
+``` r
 sdpopulation <- sd(gapminder$pop, na.rm = TRUE)
 print(sdpopulation)
 ```
 
-```output
+``` output
 [1] 106157897
 ```
 
-```r
+``` r
 varpopulation <- var(gapminder$pop, na.rm = TRUE)
 print(varpopulation)
 ```
 
-```output
+``` output
 [1] 1.12695e+16
 ```
 
-```r
+``` r
 sqrt(varpopulation) == sdpopulation
 ```
 
-```output
+``` output
 [1] TRUE
 ```
 
@@ -211,20 +211,20 @@ The `na.rm` argument tells R to ignore missing values in the variable.
 ### Calculating median and interquartile range
 
 
-```r
+``` r
 median(gapminder$pop, na.rm = TRUE)
 ```
 
-```output
+``` output
 [1] 7023596
 ```
 
 
-```r
+``` r
 IQR(gapminder$gdpPercap, na.rm = TRUE)
 ```
 
-```output
+``` output
 [1] 8123.402
 ```
 
@@ -235,11 +235,11 @@ Again, we ignore the missing values.
 -   Frequencies
 
 
-```r
+``` r
 table(gapminder$continent)
 ```
 
-```output
+``` output
 
   Africa Americas     Asia   Europe  Oceania 
      624      300      396      360       24 
@@ -248,12 +248,12 @@ table(gapminder$continent)
 -   Proportions
 
 
-```r
+``` r
 continenttable <- table(gapminder$continent)
 prop.table(continenttable)
 ```
 
-```output
+``` output
 
     Africa   Americas       Asia     Europe    Oceania 
 0.36619718 0.17605634 0.23239437 0.21126761 0.01408451 
@@ -262,14 +262,14 @@ prop.table(continenttable)
 Contingency tables of frequencies can also be tabulated with **table()**. For example:
 
 
-```r
+``` r
 table(
     gapminder$country[gapminder$year == 2007],
     gapminder$continent[gapminder$year == 2007]
 )
 ```
 
-```output
+``` output
                           
                            Africa Americas Asia Europe Oceania
   Afghanistan                   0        0    1      0       0
@@ -472,13 +472,13 @@ It all starts with a hypothesis
 Is there an absolute difference between the populations of European vs non-European countries?
 
 
-```r
+``` r
 gapminder %>%
   group_by(european) %>%
   summarise(av.popn = mean(pop, na.rm = TRUE))
 ```
 
-```output
+``` output
 # A tibble: 2 × 2
   european   av.popn
   <lgl>        <dbl>
@@ -504,20 +504,20 @@ Is the difference between heights statistically significant?
 ## Doing a t-test
 
 
-```r
+``` r
 t.test(pop ~ european, data = gapminder)$statistic
 ```
 
-```output
+``` output
        t 
 4.611907 
 ```
 
-```r
+``` r
 t.test(pop ~ european, data = gapminder)$parameter
 ```
 
-```output
+``` output
       df 
 1585.104 
 ```
@@ -539,24 +539,24 @@ Testing supported the rejection of the null hypothesis that there is no differen
 While the t-test is sufficient where there are two levels of the IV, for situations where there are more than two, we use the **ANOVA** family of procedures. To show this, we will create a variable that subsets our data by *per capita GDP* levels. If the ANOVA result is statistically significant, we will use a post-hoc test method to do pairwise comparisons (here Tukey's Honest Significant Differences.)
 
 
-```r
+``` r
 quantile(gapminder$gdpPercap)
 ```
 
-```output
+``` output
          0%         25%         50%         75%        100% 
    241.1659   1202.0603   3531.8470   9325.4623 113523.1329 
 ```
 
-```r
+``` r
 IQR(gapminder$gdpPercap)
 ```
 
-```output
+``` output
 [1] 8123.402
 ```
 
-```r
+``` r
 gapminder$gdpGroup <- cut(gapminder$gdpPercap, breaks = c(241.1659, 1202.0603, 3531.8470, 9325.4623, 113523.1329), labels = FALSE)
 
 gapminder$gdpGroup <- factor(gapminder$gdpGroup)
@@ -565,7 +565,7 @@ anovamodel <- aov(gapminder$pop ~ gapminder$gdpGroup)
 summary(anovamodel)
 ```
 
-```output
+``` output
                      Df    Sum Sq   Mean Sq F value Pr(>F)  
 gapminder$gdpGroup    3 1.066e+17 3.553e+16   3.163 0.0237 *
 Residuals          1699 1.908e+19 1.123e+16                 
@@ -574,11 +574,11 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 1 observation deleted due to missingness
 ```
 
-```r
+``` r
 TukeyHSD(anovamodel)
 ```
 
-```output
+``` output
   Tukey multiple comparisons of means
     95% family-wise confidence level
 
@@ -599,11 +599,11 @@ $`gapminder$gdpGroup`
 The most common use of regression modelling is to explore the relationship between two continuous variables, for example between `gdpPercap` and `lifeExp` in our data. We can first determine whether there is any significant correlation between the values, and if there is, plot the relationship.
 
 
-```r
+``` r
 cor.test(gapminder$gdpPercap, gapminder$lifeExp)
 ```
 
-```output
+``` output
 
 	Pearson's product-moment correlation
 
@@ -617,13 +617,13 @@ sample estimates:
 0.5837062 
 ```
 
-```r
+``` r
 ggplot(gapminder, aes(gdpPercap, log(lifeExp))) +
   geom_point() +
   geom_smooth()
 ```
 
-```output
+``` output
 `geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'
 ```
 
@@ -632,12 +632,12 @@ ggplot(gapminder, aes(gdpPercap, log(lifeExp))) +
 Having decided that a further investigation of this relationship is worthwhile, we can create a linear model with the function `lm()`.
 
 
-```r
+``` r
 modelone <- lm(gapminder$gdpPercap ~ gapminder$lifeExp)
 summary(modelone)
 ```
 
-```output
+``` output
 
 Call:
 lm(formula = gapminder$gdpPercap ~ gapminder$lifeExp)
@@ -663,12 +663,12 @@ F-statistic: 879.6 on 1 and 1702 DF,  p-value: < 2.2e-16
 Run the following code chunk and compare the results to the t test conducted earlier.
 
 
-```r
+``` r
 gapminder %>%
   mutate(european = factor(european))
 ```
 
-```output
+``` output
 # A tibble: 1,704 × 8
    country     continent  year lifeExp      pop gdpPercap european gdpGroup
    <fct>       <fct>     <int>   <dbl>    <int>     <dbl> <fct>    <fct>   
@@ -685,13 +685,13 @@ gapminder %>%
 # ℹ 1,694 more rows
 ```
 
-```r
+``` r
 modelttest <- lm(gapminder$pop ~ gapminder$european)
 
 summary(modelttest)
 ```
 
-```output
+``` output
 
 Call:
 lm(formula = gapminder$pop ~ gapminder$european)
