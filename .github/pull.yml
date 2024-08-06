@@ -1,0 +1,4 @@
+version: "1"
+rules:
+  - base: swcarpentry-main
+    upstream: swcarpentry:main
