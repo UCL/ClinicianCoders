@@ -52,7 +52,7 @@ We are going to use the data from the gapminder package.  We have added a variab
 
 ## Descriptive and inferential statistics
 
-::: Background
+::: callout
 Just as data in general are of different types - for example numeric vs text data - statistical data are assigned to different *levels of measure*. The level of measure determines how we can describe and model the data.
 :::
 
