@@ -53,7 +53,7 @@ We are going to use the data from the gapminder package.  We have added a variab
 
 ## Descriptive and inferential statistics
 
-::: Background
+::: callout
 Just as data in general are of different types - for example numeric vs text data - statistical data are assigned to different *levels of measure*. The level of measure determines how we can describe and model the data.
 :::
 
@@ -264,8 +264,8 @@ Contingency tables of frequencies can also be tabulated with **table()**. For ex
 
 ``` r
 table(
-    gapminder$country[gapminder$year == 2007],
-    gapminder$continent[gapminder$year == 2007]
+  gapminder$country[gapminder$year == 2007],
+  gapminder$continent[gapminder$year == 2007]
 )
 ```
 
@@ -523,7 +523,7 @@ t.test(pop ~ european, data = gapminder)$parameter
 ```
 
 Notice that the summary()** of the test contains more data than is output by default.
- 
+
 
 Write a paragraph in markdown format reporting this test result including the t-statistic, the degrees of freedom, the confidence interval and the p-value to 4 places.  To do this include your r code **inline** with your text, rather than in an R code chunk.
 
