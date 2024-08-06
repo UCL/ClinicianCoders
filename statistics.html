@@ -382,7 +382,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Basic Statistics: describing, modelling and reporting</h1>
-        <p>Last updated on 2024-07-02 |
+        <p>Last updated on 2024-08-06 |
 
         <a href="https://github.com/UCL/ClinicianCoders/edit/main/episodes/statistics.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -454,22 +454,31 @@ by collecting data on a small sample</li>
 ensure <strong>representative</strong> data.</li>
 </ul></section><section><h2 class="section-heading" id="descriptive-and-inferential-statistics">Descriptive and inferential statistics<a class="anchor" aria-label="anchor" href="#descriptive-and-inferential-statistics"></a>
 <a class="anchor" aria-label="anchor" href="#descriptive-and-inferential-statistics"></a></h2>
-<hr class="half-width"><div class="Background">
-<p>Just as data in general are of different types - for example numeric
-vs text data - statistical data are assigned to different <em>levels of
-measure</em>. The level of measure determines how we can describe and
-model the data.</p>
-</div>
-</section><div class="section level1">
-<h1 id="describing-data">Describing data<a class="anchor" aria-label="anchor" href="#describing-data"></a></h1>
-<ul><li>Continuous variables</li>
-<li>Discrete variables</li>
-</ul><div id="callout1" class="callout">
+<hr class="half-width"><div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div class="callout-inner">
 <h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
+</h3>
+<div class="callout-content">
+<p>Just as data in general are of different types - for example numeric
+vs text data - statistical data are assigned to different <em>levels of
+measure</em>. The level of measure determines how we can describe and
+model the data.</p>
+</div>
+</div>
+</div>
+</section><div class="section level1">
+<h1 id="describing-data">Describing data<a class="anchor" aria-label="anchor" href="#describing-data"></a></h1>
+<ul><li>Continuous variables</li>
+<li>Discrete variables</li>
+</ul><div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout2"></a>
 </h3>
 <div class="callout-content">
 <p>How do we convey information on what your data looks like, using
@@ -697,8 +706,8 @@ the variable.</p>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">table</span><span class="op">(</span></span>
-<span>    <span class="va">gapminder</span><span class="op">$</span><span class="va">country</span><span class="op">[</span><span class="va">gapminder</span><span class="op">$</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">]</span>,</span>
-<span>    <span class="va">gapminder</span><span class="op">$</span><span class="va">continent</span><span class="op">[</span><span class="va">gapminder</span><span class="op">$</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">]</span></span>
+<span>  <span class="va">gapminder</span><span class="op">$</span><span class="va">country</span><span class="op">[</span><span class="va">gapminder</span><span class="op">$</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">]</span>,</span>
+<span>  <span class="va">gapminder</span><span class="op">$</span><span class="va">continent</span><span class="op">[</span><span class="va">gapminder</span><span class="op">$</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">]</span></span>
 <span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
@@ -858,12 +867,12 @@ between the observed frequencies.</p>
 <div class="section level2">
 <h2 id="meaningful-analysis">Meaningful analysis<a class="anchor" aria-label="anchor" href="#meaningful-analysis"></a></h2>
 <ul><li>What is your hypothesis - what is your null hypothesis?</li>
-</ul><div id="callout2" class="callout">
+</ul><div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout3"></a>
 </h3>
 <div class="callout-content">
 <p>Always: the level of the independent variable has no effect on the
@@ -1275,7 +1284,7 @@ again.</li>
   "url": "https://UCL.github.io/ClinicianCoders/statistics.html",
   "identifier": "https://UCL.github.io/ClinicianCoders/statistics.html",
   "dateCreated": "2023-10-26",
-  "dateModified": "2024-07-02",
+  "dateModified": "2024-08-06",
   "datePublished": "2024-08-06"
 }
 
