@@ -1,5 +1,4 @@
 version: "1"
 rules:
-  - base: main
+  - base: swcarpentry-main
     upstream: swcarpentry:main
-    mergeMethod: squash
