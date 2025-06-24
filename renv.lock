@@ -905,10 +905,14 @@
       "RoxygenNote": "7.3.2.9000",
       "Encoding": "UTF-8",
       "Language": "en-US",
-      "NeedsCompilation": "yes",
+      "Roxygen": "list(markdown = TRUE)",
       "Author": "Jeroen Ooms [aut, cre] (ORCID: <https://orcid.org/0000-0002-4035-0289>), Hadley Wickham [ctb], Posit Software, PBC [cph]",
       "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
-      "Repository": "RSPM"
+      "RemoteType": "repository",
+      "RemoteUrl": "https://github.com/jeroen/curl",
+      "RemoteRef": "v6.2.3",
+      "RemoteSha": "c23c0fba61c8ee50ff21e5a5ff175e310713801f",
+      "Repository": "carpentries"
     },
     "data.table": {
       "Package": "data.table",
