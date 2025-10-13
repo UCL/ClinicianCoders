@@ -77,7 +77,7 @@ ggplot(gapminder, aes(x = gdpPercap)) +
 ```
 
 ``` output
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
 <img src="fig/statistics-rendered-unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
@@ -95,7 +95,7 @@ ggplot(data = gapminder, aes(log(pop))) +
 ```
 
 ``` output
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
 <img src="fig/statistics-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
@@ -143,7 +143,7 @@ ggplot(dummy_1, aes(x = dummy_1)) +
 ```
 
 ``` output
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
 <img src="fig/statistics-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
@@ -157,7 +157,7 @@ ggplot(dummy_2, aes(x = dummy_2)) +
 ```
 
 ``` output
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
 <img src="fig/statistics-rendered-unnamed-chunk-3-2.png" style="display: block; margin: auto;" />
