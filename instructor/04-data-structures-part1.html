@@ -381,7 +381,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data Structures</h1>
-        <p>Last updated on 2025-11-11 |
+        <p>Last updated on 2026-01-07 |
 
         <a href="https://github.com/UCL/ClinicianCoders/edit/main/episodes/04-data-structures-part1.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -593,7 +593,8 @@ specifying them using the <code>$</code> operator:</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in cats$weight + cats$coat: non-numeric argument to binary operator</code></pre>
+<pre class="error" tabindex="0"><code>Error in `cats$weight + cats$coat`:
+! non-numeric argument to binary operator</code></pre>
 </div>
 <p>Understanding what happened here is key to successfully analyzing
 data in R.</p>
@@ -719,7 +720,8 @@ the same math we did on them before, we run into trouble:</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in cats$weight + 2: non-numeric argument to binary operator</code></pre>
+<pre class="error" tabindex="0"><code>Error in `cats$weight + 2`:
+! non-numeric argument to binary operator</code></pre>
 </div>
 <p>What happened? The <code>cats</code> data we are working with is
 something called a <em>data frame</em>. Data frames are one of the most
@@ -1594,7 +1596,8 @@ before:</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in pizza_price$pizzafresh: $ operator is invalid for atomic vectors</code></pre>
+<pre class="error" tabindex="0"><code>Error in `pizza_price$pizzafresh`:
+! $ operator is invalid for atomic vectors</code></pre>
 </div>
 <p>It will pay off if you remember this error message, you will meet it
 in your own analyses. It means that you have just tried accessing an
@@ -2398,8 +2401,8 @@ lists and vectors, with some added attributes.</li>
   "url": "https://UCL.github.io/ClinicianCoders/instructor/04-data-structures-part1.html",
   "identifier": "https://UCL.github.io/ClinicianCoders/instructor/04-data-structures-part1.html",
   "dateCreated": "2023-10-26",
-  "dateModified": "2025-11-11",
-  "datePublished": "2026-01-06"
+  "dateModified": "2026-01-07",
+  "datePublished": "2026-01-07"
 }
 
   </script><script>
