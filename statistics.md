@@ -80,7 +80,7 @@ ggplot(gapminder, aes(x = gdpPercap)) +
 `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
-<img src="fig/statistics-rendered-unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
+<img src="fig/statistics-rendered-unnamed-chunk-1-1.png" alt="" style="display: block; margin: auto;" />
 
 What is the distribution of this data?
 
@@ -98,7 +98,7 @@ ggplot(data = gapminder, aes(log(pop))) +
 `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
-<img src="fig/statistics-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
+<img src="fig/statistics-rendered-unnamed-chunk-2-1.png" alt="" style="display: block; margin: auto;" />
 
 What is the distribution of this data?
 
@@ -146,7 +146,7 @@ ggplot(dummy_1, aes(x = dummy_1)) +
 `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
-<img src="fig/statistics-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="fig/statistics-rendered-unnamed-chunk-3-1.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 # larger standard deviation
@@ -160,7 +160,7 @@ ggplot(dummy_2, aes(x = dummy_2)) +
 `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
-<img src="fig/statistics-rendered-unnamed-chunk-3-2.png" style="display: block; margin: auto;" />
+<img src="fig/statistics-rendered-unnamed-chunk-3-2.png" alt="" style="display: block; margin: auto;" />
 
 ::::::::::::::::::::::::::::::::::::: instructor
 Get them to plot the graphs. Explain that we are generating random data from different distributions and plotting them.
@@ -627,7 +627,7 @@ ggplot(gapminder, aes(gdpPercap, log(lifeExp))) +
 `geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'
 ```
 
-<img src="fig/statistics-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="fig/statistics-rendered-unnamed-chunk-14-1.png" alt="" style="display: block; margin: auto;" />
 
 Having decided that a further investigation of this relationship is worthwhile, we can create a linear model with the function `lm()`.
 

@@ -168,7 +168,8 @@ cats$weight + cats$coat
 ```
 
 ``` error
-Error in cats$weight + cats$coat: non-numeric argument to binary operator
+Error in `cats$weight + cats$coat`:
+! non-numeric argument to binary operator
 ```
 
 Understanding what happened here is key to successfully analyzing data in R.
@@ -276,7 +277,8 @@ cats$weight + 2
 ```
 
 ``` error
-Error in cats$weight + 2: non-numeric argument to binary operator
+Error in `cats$weight + 2`:
+! non-numeric argument to binary operator
 ```
 
 What happened?
@@ -989,7 +991,8 @@ pizza_price$pizzafresh
 ```
 
 ``` error
-Error in pizza_price$pizzafresh: $ operator is invalid for atomic vectors
+Error in `pizza_price$pizzafresh`:
+! $ operator is invalid for atomic vectors
 ```
 
 It will pay off if you remember this error message, you will meet it in your own
