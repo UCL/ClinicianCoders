@@ -32,7 +32,7 @@ making a toy dataset in your `data/` directory, called `feline-data.csv`:
 ``` r
 cats <- data.frame(coat = c("calico", "black", "tabby"),
                     weight = c(2.1, 5.0, 3.2),
-                    likes_string = c(1, 0, 1))
+                    likes_catnip = c(1, 0, 1))
 ```
 
 We can now save `cats` as a CSV file. It is good practice to call the argument
@@ -49,7 +49,7 @@ The contents of the new file, `feline-data.csv`:
 
 
 ``` r
-coat,weight,likes_string
+coat,weight,likes_catnip
 calico,2.1,1
 black,5.0,0
 tabby,3.2,1
@@ -74,13 +74,13 @@ cats
 ```
 
 ``` output
-    coat weight likes_string
+    coat weight likes_catnip
 1 calico    2.1            1
 2  black    5.0            0
 3  tabby    3.2            1
 ```
 
-The `read.table` function is used for reading in tabular data stored in a text
+The `read.csv` function is used for reading in tabular data stored in a text
 file where the columns of data are separated by punctuation characters such as
 CSV files (csv = comma-separated values). Tabs and commas are the most common
 punctuation characters used to separate or delimit data points in csv files.
@@ -238,30 +238,38 @@ No matter how
 complicated our analyses become, all data in R is interpreted as one of these
 basic data types. This strictness has some really important consequences.
 
-A user has added details of another cat. This information is in the file
-`data/feline-data_v2.csv`.
+A user has provided details of another cat. We can add an additional row to our cats table using `rbind()`.
 
 
 ``` r
-file.show("data/feline-data_v2.csv")
+additional_cat <- data.frame(coat = "tabby", weight = "2.3 or 2.4", likes_catnip = 1)
+additional_cat
 ```
 
-
-``` r
-coat,weight,likes_string
-calico,2.1,1
-black,5.0,0
-tabby,3.2,1
-tabby,2.3 or 2.4,1
+``` output
+   coat     weight likes_catnip
+1 tabby 2.3 or 2.4            1
 ```
 
-Load the new cats data like before, and check what type of data we find in the
-`weight` column:
+``` r
+cats2 <- rbind(cats, additional_cat)
+cats2
+```
+
+``` output
+    coat     weight likes_catnip
+1 calico        2.1            1
+2  black          5            0
+3  tabby        3.2            1
+4  tabby 2.3 or 2.4            1
+```
+
+Let's check what type of data we find in the
+`weight` column of our new `cats2` object:
 
 
 ``` r
-cats <- read.csv(file="data/feline-data_v2.csv")
-typeof(cats$weight)
+typeof(cats2$weight)
 ```
 
 ``` output
@@ -273,19 +281,19 @@ we did on them before, we run into trouble:
 
 
 ``` r
-cats$weight + 2
+cats2$weight + 2
 ```
 
 ``` error
-Error in `cats$weight + 2`:
+Error in `cats2$weight + 2`:
 ! non-numeric argument to binary operator
 ```
 
 What happened?
-The `cats` data we are working with is something called a *data frame*. Data frames
+The `cats` (and `cats2`) data we are working with is something called a *data frame*. Data frames
 are one of the most common and versatile types of *data structures* we will work with in R.
 A given column in a data frame cannot be composed of different data types.
-In this case, R does not read everything in the data frame column `weight` as a *double*, therefore the entire
+In this case, R cannot store everything in the data frame column `weight` as a *double* anymore once we add the row for the additional cat (because its weight is `2.3 or 2.4`), therefore the entire
 column data type changes to something that is suitable for everything in the column.
 
 When R reads a csv file, it reads it in as a *data frame*. Thus, when we loaded the `cats`
@@ -294,14 +302,14 @@ is written by the `str()` function:
 
 
 ``` r
-str(cats)
+str(cats2)
 ```
 
 ``` output
 'data.frame':	4 obs. of  3 variables:
  $ coat        : chr  "calico" "black" "tabby" "tabby"
  $ weight      : chr  "2.1" "5" "3.2" "2.3 or 2.4"
- $ likes_string: int  1 0 1 1
+ $ likes_catnip: num  1 0 1 1
 ```
 
 *Data frames* are composed of rows and columns, where each column has the
@@ -309,27 +317,7 @@ same number of rows. Different columns in a data frame can be made up of differe
 data types (this is what makes them so versatile), but everything in a given
 column needs to be the same type (e.g., vector, factor, or list).
 
-Let's explore more about different data structures and how they behave.
-For now, let's remove that extra line from our cats data and reload it,
-while we investigate this behavior further:
-
-feline-data.csv:
-
-```
-coat,weight,likes_string
-calico,2.1,1
-black,5.0,0
-tabby,3.2,1
-```
-
-And back in RStudio:
-
-
-``` r
-cats <- read.csv(file="data/feline-data.csv")
-```
-
-
+Let's explore more about different data structures and how they behave. For now, we will focus on our original data frame `cats` (and we can forget about `cats2` for the rest of this episode).
 
 ### Vectors and Type Coercion
 
@@ -518,7 +506,7 @@ may well be to blame; make sure everything is the same type in your vectors and
 your columns of data.frames, or you will get nasty surprises!
 
 But coercion can also be very useful! For example, in our `cats` data
-`likes_string` is numeric, but we know that the 1s and 0s actually represent
+`likes_catnip` is numeric, but we know that the 1s and 0s actually represent
 `TRUE` and `FALSE` (a common way of representing them). We should use the
 `logical` datatype here, which has two states: `TRUE` or `FALSE`, which is
 exactly what our data represents. We can 'coerce' this column to be `logical` by
@@ -526,7 +514,7 @@ using the `as.logical` function:
 
 
 ``` r
-cats$likes_string
+cats$likes_catnip
 ```
 
 ``` output
@@ -534,8 +522,8 @@ cats$likes_string
 ```
 
 ``` r
-cats$likes_string <- as.logical(cats$likes_string)
-cats$likes_string
+cats$likes_catnip <- as.logical(cats$likes_catnip)
+cats$likes_catnip
 ```
 
 ``` output
@@ -557,28 +545,27 @@ Create a new script in RStudio and copy and paste the following code. Then
 move on to the tasks below, which help you to fill in the gaps (\_\_\_\_\_\_).
 
 ```
-# Read data
-cats <- read.csv("data/feline-data_v2.csv")
+Using the object `cats2`:
 
 # 1. Print the data
 _____
 
 # 2. Show an overview of the table with all data types
-_____(cats)
+_____(cats2)
 
 # 3. The "weight" column has the incorrect data type __________.
 #    The correct data type is: ____________.
 
 # 4. Correct the 4th weight data point with the mean of the two given values
-cats$weight[4] <- 2.35
+cats2$weight[4] <- 2.35
 #    print the data again to see the effect
-cats
+cats2
 
 # 5. Convert the weight to the right data type
-cats$weight <- ______________(cats$weight)
+cats2$weight <- ______________(cats2$weight)
 
 #    Calculate the mean to test yourself
-mean(cats$weight)
+mean(cats2$weight)
 
 # If you see the correct mean value (and not NA), you did the exercise
 # correctly!
@@ -588,7 +575,7 @@ mean(cats$weight)
 
 #### 1\. Print the data
 
-Execute the first statement (`read.csv(...)`). Then print the data to the
+Print the data to the
 console
 
 :::::::::::::::  solution
@@ -603,8 +590,8 @@ Show the content of any variable by typing its name.
 Two correct solutions:
 
 ```
-cats
-print(cats)
+cats2
+print(cats2)
 ```
 
 :::::::::::::::::::::::::
@@ -613,7 +600,7 @@ print(cats)
 
 The data type of your data is as important as the data itself. Use a
 function we saw earlier to print out the data types of all columns of the
-`cats` table.
+`cats2` `data.frame`.
 
 :::::::::::::::  solution
 
@@ -630,7 +617,7 @@ here.
 > ### Solution to Challenge 1.2
 > 
 > ```
-> str(cats)
+> str(cats2)
 > ```
 
 #### 3\. Which data type do we need?
@@ -638,7 +625,6 @@ here.
 The shown data type is not the right one for this data (weight of
 a cat). Which data type do we need?
 
-- Why did the `read.csv()` function not choose the correct data type?
 - Fill in the gap in the comment with the correct data type for cat weight!
 
 :::::::::::::::  solution
@@ -717,8 +703,8 @@ auto-complete function: Type "`as.`" and then press the TAB key.
 > There are two functions that are synonymous for historic reasons:
 > 
 > ```
-> cats$weight <- as.double(cats$weight)
-> cats$weight <- as.numeric(cats$weight)
+> cats2$weight <- as.double(cats2$weight)
+> cats2$weight <- as.numeric(cats2$weight)
 > ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -1110,7 +1096,7 @@ cats
 ```
 
 ``` output
-    coat weight likes_string
+    coat weight likes_catnip
 1 calico    2.1         TRUE
 2  black    5.0        FALSE
 3  tabby    3.2         TRUE
@@ -1206,7 +1192,7 @@ cats[1,]
 ```
 
 ``` output
-    coat weight likes_string
+    coat weight likes_catnip
 1 calico    2.1         TRUE
 ```
 
@@ -1226,7 +1212,7 @@ str(cats[1,])
 'data.frame':	1 obs. of  3 variables:
  $ coat        : chr "calico"
  $ weight      : num 2.1
- $ likes_string: logi TRUE
+ $ likes_catnip: logi TRUE
 ```
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -1339,7 +1325,7 @@ cats[1, ]
 ```
 
 ``` output
-    coat weight likes_string
+    coat weight likes_catnip
 1 calico    2.1         TRUE
 ```
 
@@ -1365,7 +1351,7 @@ names(cats)
 ```
 
 ``` output
-[1] "coat"         "weight"       "likes_string"
+[1] "coat"         "weight"       "likes_catnip"
 ```
 
 If you want to rename the second column of `cats`, you can assign a new name to the second element of `names(cats)`.
@@ -1377,7 +1363,7 @@ cats
 ```
 
 ``` output
-    coat weight_kg likes_string
+    coat weight_kg likes_catnip
 1 calico       2.1         TRUE
 2  black       5.0        FALSE
 3  tabby       3.2         TRUE
