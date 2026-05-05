@@ -487,7 +487,7 @@ gapminder %>%
 ```
 
 
-Is the difference between heights statistically significant?
+Is the difference between average population sizes statistically significant?
 
 ## t-test
 
